@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 body {
@@ -121,26 +122,36 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .logo {
+    font-family: "Baloo Paaji 2", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 24px;
+    letter-spacing: -5%;
+  }
+  /* display md bold*/
   h1 {
     font-family: "Anuphan", sans-serif;
-    font-weight: 500;
-    font-size: 72px;
-    line-height: 90px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
     letter-spacing: -0.02em;
   }
+  /* display sm semibold */
   h2 {
     font-family: "Anuphan", sans-serif;
-    font-weight: 500;
-    font-size: 56px;
-    line-height: 72px;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: 0em;
   }
+  /* display xs bold */
   h3 {
     font-family: "Anuphan", sans-serif;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 52px;
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0em;
   }
   h4 {
     font-family: "Anuphan", sans-serif;

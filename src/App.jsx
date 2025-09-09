@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 
 function App() {
   return (
     <div>
-      <h1 className="text-4xl font-bold">บทนำ</h1>
-      <h2 className="text-3xl font-semibold">asdfadsf</h2>
-      <p className="text-lg">ยินดีต้อนรับสู่แอปพลิเคชันของเรา</p>
+      <p className="logo">CaterLink</p>
+      <h1>เปรียบเทียบร้านอาหาร</h1>
+      <h2>เข้าสู่ระบบ</h2>
+      <h3>ร้านแนะนำจาก CaterLink</h3>
+      <p>ยินดีต้อนรับสู่แอปพลิเคชันของเรา</p>
+      <Search className="bg-gradient" />
       <Button className="bg-gradient text-white">คลิกทำไม</Button>
     </div>
   );
