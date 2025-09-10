@@ -11,7 +11,7 @@ function App() {
       <p>ยินดีต้อนรับสู่แอปพลิเคชันของเรา</p>
       <Search className="bg-gradient" />
       <Button className="bg-gradient text-white">คลิกทำไม</Button>
-      <h1>Homepage FrontEnd 2</h1>
+      <h1>Homepage FrontEnd 3</h1>
     </div>
   );
 }
