@@ -5,6 +5,7 @@ import RestaurantCard from "../components/ui/RestaurantCard";
 import PackageCard from "../components/ui/PackageCard";
 import TestimonialCard from "../components/ui/TestimonialCard";
 import BlogpostCard from "../components/ui/BlogpostCard";
+import Footer from "../components/ui/Footer";
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -284,6 +285,8 @@ function CustomerHomepage() {
           <BlogpostCard />
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }
