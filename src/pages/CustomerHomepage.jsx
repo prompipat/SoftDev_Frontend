@@ -2,6 +2,7 @@ import NavbarCustom from "../components/ui/Navbar-custom";
 import CarouselCustom from "../components/ui/Carousel-custom";
 import FilterCustom from "../components/ui/Filter-custom";
 import RestaurantCard from "../components/ui/RestaurantCard";
+import PackageCard from "../components/ui/PackageCard";
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -147,6 +148,71 @@ function CustomerHomepage() {
           <RestaurantCard />
           <RestaurantCard />
           <RestaurantCard />
+          <RestaurantCard />
+          <RestaurantCard />
+        </div>
+      </div>
+
+      {/* เปรียบเทียบแพคเกจ */}
+      <div className="flex gap-4 py-10 px-32 bg-[#F9FAFB]">
+        <div className="flex flex-row-reverse gap-10">
+          <img
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=336&h=288&fit=crop"
+            alt="Italian Restaurant"
+            className="rounded-md"
+          />
+          <div className="flex flex-col gap-16 items-stretch justify-center">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-[#101828]">เปรียบเทียบแพคเกจ</h1>
+              <p className="text-lg text-[#344054]">
+                เพราะการจัดเลี้ยงไม่ควรเป็นเรื่องซับซ้อน ฟีเจอร์
+                “เปรียบเทียบแพ็กเกจ” จะช่วยให้เห็นทุกข้อมูลที่ต้องการ
+                แบบชัดเจนในครั้งเดียว ทั้งราคา เมนู และความคุ้มค่าของแต่ละร้าน
+                ทำให้วางใจได้ว่าตัดสินใจเลือกสิ่งที่ตรงใจที่สุด
+              </p>
+            </div>
+            <Button className="bg-gradient px-8 py-3 text-lg font-bold w-fit h-fit">
+              เปรียบเทียบแพคเกจ
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Recommended Restaurants */}
+      <div className="flex flex-col gap-4 px-32 py-10">
+        <div className="flex justify-between items-center">
+          <h3>ร้านแนะนำจาก CaterLink </h3>
+          <div className="flex gap-2 items-center">
+            <p className="font-bold text-gradient">ดูทั้งหมด</p>
+            <ArrowRight className="text-[#EB5B0A]" />
+          </div>
+        </div>
+
+        <div className="flex gap-4">
+          <RestaurantCard />
+          <RestaurantCard />
+          <RestaurantCard />
+          <RestaurantCard />
+          <RestaurantCard />
+        </div>
+      </div>
+
+      {/* Recommended Package from CaterLink */}
+      <div className="flex flex-col gap-4 px-32 py-10">
+        <div className="flex justify-between items-center">
+          <h3>แพคเกจแนะนำจาก CaterLink </h3>
+          <div className="flex gap-2 items-center">
+            <p className="font-bold text-gradient">ดูทั้งหมด</p>
+            <ArrowRight className="text-[#EB5B0A]" />
+          </div>
+        </div>
+
+        <div className="flex gap-4">
+          <PackageCard />
+          <PackageCard />
+          <PackageCard />
+          <PackageCard />
+          <PackageCard />
         </div>
       </div>
     </>
