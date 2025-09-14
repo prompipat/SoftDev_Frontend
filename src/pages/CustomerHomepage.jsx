@@ -3,6 +3,7 @@ import CarouselCustom from "../components/ui/Carousel-custom";
 import FilterCustom from "../components/ui/Filter-custom";
 import RestaurantCard from "../components/ui/RestaurantCard";
 import PackageCard from "../components/ui/PackageCard";
+import TestimonialCard from "../components/ui/TestimonialCard";
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -213,6 +214,65 @@ function CustomerHomepage() {
           <PackageCard />
           <PackageCard />
           <PackageCard />
+        </div>
+      </div>
+
+      {/* Review from Customers */}
+      <div className="flex flex-col gap-3 px-32 py-10 bg-[#F9FAFB]">
+        <div className="flex flex-col gap-8 justify-center items-center">
+          <h1>รีวิวจากผู้ใช้จริง</h1>
+          <div className="flex gap-4">
+            <TestimonialCard />
+            <TestimonialCard />
+            <TestimonialCard />
+          </div>
+        </div>
+      </div>
+
+      {/* Blog Post */}
+      <div className="flex flex-col gap-4 px-32 py-10">
+        <div className="flex justify-between items-center">
+          <h3>บทความล่าสุด</h3>
+          <div className="flex gap-2 items-center">
+            <p className="font-bold text-gradient">ดูทั้งหมด</p>
+            <ArrowRight className="text-[#EB5B0A]" />
+          </div>
+        </div>
+
+        <div className="flex gap-3">
+          <Button className="bg-gradient py-1 px-4 rounded-sm text-white ">
+            ทั้งหมด
+          </Button>
+          <Button
+            variant="outline"
+            className="py-1 px-4 rounded-sm border-[#EAECF0] text-[#344054]"
+          >
+            บทความจากร้าน
+          </Button>
+          <Button
+            variant="outline"
+            className="py-1 px-4 rounded-sm border-[#EAECF0] text-[#344054]"
+          >
+            บทความจากลูกค้า
+          </Button>
+          <Button
+            variant="outline"
+            className="py-1 px-4 rounded-sm border-[#EAECF0] text-[#344054]"
+          >
+            ซุ้มอาหาร
+          </Button>
+          <Button
+            variant="outline"
+            className="py-1 px-4 rounded-sm border-[#EAECF0] text-[#344054]"
+          >
+            จัดเลี้ยง
+          </Button>
+          <Button
+            variant="outline"
+            className="py-1 px-4 rounded-sm border-[#EAECF0] text-[#344054]"
+          >
+            Snack Box
+          </Button>
         </div>
       </div>
     </>
