@@ -4,6 +4,7 @@ import FilterCustom from "../components/ui/Filter-custom";
 import RestaurantCard from "../components/ui/RestaurantCard";
 import PackageCard from "../components/ui/PackageCard";
 import TestimonialCard from "../components/ui/TestimonialCard";
+import BlogpostCard from "../components/ui/BlogpostCard";
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -273,6 +274,14 @@ function CustomerHomepage() {
           >
             Snack Box
           </Button>
+        </div>
+
+        <div className="flex gap-4">
+          <BlogpostCard />
+          <BlogpostCard />
+          <BlogpostCard />
+          <BlogpostCard />
+          <BlogpostCard />
         </div>
       </div>
     </>
