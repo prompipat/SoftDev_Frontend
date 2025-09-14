@@ -1,11 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CustomerHomepage from "./pages/CustomerHomepage";
+
 function App() {
   return (
-    <>
-      <h1 className="logo">CaterLink</h1>
-      <h1>Welcome to CaterLink</h1>
-      <h2>ยินดีต้อนรับสู่แอปพลิเคชันของเรา</h2>
-      <div className="bg-gradient w-16 h-16"></div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<CustomerHomepage />} />
+        <Route
+          path="/welcome"
+          element={
+            <div className="p-8">
+              <h1 className="text-4xl font-bold mb-4">Welcome to CaterLink</h1>
+              <h2 className="text-2xl mb-4">
+                ยินดีต้อนรับสู่แอปพลิเคชันของเรา
+              </h2>
+              <div className="bg-gradient w-16 h-16 rounded"></div>
+            </div>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
