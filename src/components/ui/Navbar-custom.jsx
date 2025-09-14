@@ -51,33 +51,33 @@ function NavbarCustom() {
 
         <div className="flex gap-2">
           <button className="py-[10px] px-4">
-            <p className="text-[#475467]">ลงชื่อเข้าใช้</p>
+            <p className="text-[#475467] font-semibold">ลงชื่อเข้าใช้</p>
           </button>
           <button className="p-3 border-none rounded-md bg-gradient">
-            <p className="text-white">เข้าสู่ระบบ</p>
+            <p className="text-white font-semibold">เข้าสู่ระบบ</p>
           </button>
         </div>
       </div>
       {/* Footer */}
       <div className="flex px-32 gap-8 justify-center items-center">
         <button>
-          <p className="text-gradient">หน้าหลัก</p>
+          <p className="text-gradient font-semibold">หน้าหลัก</p>
         </button>
         <button>
-          <p className="text-[#475467]">ร้านค้า</p>
+          <p className="text-[#475467] font-semibold">ร้านค้า</p>
         </button>
         <button className="flex items-center gap-1 text-[#475467]">
-          <p className="text-[#475467]">หมวดหมู่ร้านค้า</p>
+          <p className="text-[#475467] font-semibold">หมวดหมู่ร้านค้า</p>
           <ChevronDown />
         </button>
         <button>
-          <p className="text-[#475467]">เปรียบเทียบ</p>
+          <p className="text-[#475467] font-semibold">เปรียบเทียบ</p>
         </button>
         <button>
-          <p className="text-[#475467]">วางแผนงานเลี้ยง</p>
+          <p className="text-[#475467] font-semibold">วางแผนงานเลี้ยง</p>
         </button>
         <button>
-          <p className="text-[#475467]">บทความ</p>
+          <p className="text-[#475467] font-semibold">บทความ</p>
         </button>
       </div>
     </nav>
