@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CustomerHomepage from "./pages/CustomerHomepage";
+import Register from "./pages/Register";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<CustomerHomepage />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/welcome"
           element={
