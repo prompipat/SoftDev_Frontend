@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CustomerHomepage from "./pages/CustomerHomepage";
-import NavbarCustom from "./components/ui/Navbar-custom";
 
 function App() {
   return (
     <Router>
-      <NavbarCustom />
       <Routes>
+        <Route path="/" element={<CustomerHomepage />} />
         <Route
-          path="/"
+          path="/welcome"
           element={
             <div className="p-8">
               <h1 className="text-4xl font-bold mb-4">Welcome to CaterLink</h1>
@@ -19,7 +18,6 @@ function App() {
             </div>
           }
         />
-        <Route path="/customerhomepage" element={<CustomerHomepage />} />
       </Routes>
     </Router>
   );
