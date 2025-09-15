@@ -1,6 +1,7 @@
 import NavbarCustom from "../components/ui/Navbar-custom";
 import FilterCustom from "../components/ui/Filter-custom";
 import RestaurantCard from "../components/ui/RestaurantCard";
+import MiniFooter from "../components/ui/miniFooter";
 
 function CustomerRestaurant() {
   return (
@@ -54,6 +55,8 @@ function CustomerRestaurant() {
           <RestaurantCard />
         </div>
       </div>
+
+      <MiniFooter />
     </>
   );
 }
