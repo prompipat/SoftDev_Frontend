@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 function NavbarRestCustom(){
     return (
-        <div className="relative w-[240px] h-auto bg-[#F9FAFB] shadow-[inset_-16px_0_12px_rgba(0,0,0,0.03)]">
+        <div className="relative w-[240px] h-auto bg-[#F9FAFB] shadow-[inset_-16px_0_14px_rgba(0,0,0,0.03)]">
             {/* Logo wrap */}
             <div className="flex items-center pt-[19px] pl-[28px] pb-[33px] gap-[16px]">
                 <Logo className="w-[32px] h-[32px]"/>
