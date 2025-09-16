@@ -2,53 +2,43 @@ import axios from "axios";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-import Logo from "../components/ui/Logo";
+import NavbarRestCustom from "../components/ui/Navbar-rest-custom";
 
 function WriteBlog() {
 
   return (
     <>
-      {/*หน้าลงทะเบียน*/}
-      <div className="flex justify-center">
+      {/*หน้าเขียน Blog*/}
+      <div className="flex flex-row">
+          <NavbarRestCustom />
           {/* Container */}
-          <div className="flex justify-center w-[1280px] h-[602px] mt-[96px]">
-            {/* Content (outer) */}
-            <div className="w-[360px] h-[602px]">
+          <div className="w-[1200px] h-[100vh] bg-[#F9FAFB]">
+            {/* Header Navigation */}
+            <div className="flex flex-col w-auto h-[63px] pl-[calc(50%-552px)] justify-center bg-green-200 mb-[32px]">
+                <p className="font-[24px] font-semibold">สร้างบทความทั่วไป</p>{/*semibold=600*/}
+            </div>
 
-              {/* header */}
-              <div className="flex flex-col items-center">
-                <Logo className="w-[48px] h-[48px]" />
-                <h2 className="mt-[24px]">เข้าสู่ระบบร้านค้า</h2>
-              </div>
+            {/* Content */}
+            <div className="flex flex-col w-auto h-[1006px] items-center bg-green-200 mb-[32px]">
+                {/* Table */}
+                <div className="grid justify-center items-center border-[1px] border-[#F2F4F7] rounded-[24px] w-[1104px] h-[934px] bg-white">
+                    {/* Content (Blog Infomation) */}
+                    <div className="flex gap-[32px] w-[1056px] h-[404px] bg-green-200">
+                        <p className="font-[14px]">ข้อมูลบทความ</p>
+                        {/* Input Field */}
+                        
+                    </div>
 
-              {/* form */}
-              <form className="grid gap-[6px] mt-[32px] mb-[24px]">
-                <label><p>Email*</p></label>
-                <input 
-                  type="email"
-                  id="email"
-                  value={loginData.email}
-                  placeholder="เพิ่ม Email"
-                  className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                />
-                <label><p>Password*</p></label>
-                <input 
-                  type="password"
-                  id="passwd"
-                  value={loginData.passwd}
-                  placeholder="Input password"
-                  className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                />
-              </form>
+                    {/* Content (Blog Category) */}
+                    <div className=" pt-[24px] pb-[65px] w-[1056px] h-[166px] bg-green-200">
 
-              {/* action */}
-              <Button onClick={handleLogin} className="w-[100%] bg-[#FF8A00] rounded-full">เข้าสู่ระบบ</Button>
+                    </div>
 
-              {/* row */}
-              <div className="flex justify-center gap-[5px] mt-[32px]">
-                <p>ยังไม่มีบัญชี ?</p>
-                <a href="./register"><p className="font-bold text-[#FF8A00]">สร้างบัญชีใหม่</p></a>
-              </div>
+                    {/* Content (Blog Category) */}
+                    <div className="pt-[24px] w-[1056px] h-[153px] bg-green-200">
+
+                    </div>
+                </div>
             </div>
           </div>
       </div>
