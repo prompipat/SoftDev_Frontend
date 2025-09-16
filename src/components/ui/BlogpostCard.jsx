@@ -5,7 +5,7 @@ function BlogpostCard() {
         <img
           src="https://github.com/shadcn.png"
           alt=""
-          className="rounded-lg max-w-[224px] h-[140px] object-cover"
+          className="rounded-lg w-[224px] h-[140px] object-cover"
         />
         <p className="text-sm font-bold text-[#101828]">
           8 สถานที่จัดงานบุญนอกสถานที่
