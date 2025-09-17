@@ -2,6 +2,7 @@ import React from "react";
 import { Search } from "lucide-react";
 import { ShoppingCart } from "lucide-react";
 import { ChevronDown } from "lucide-react";
+import Logo from "./Logo";
 // import { useNavigate, useLocation } from "react-router-dom";
 
 function NavbarCustom() {
@@ -24,11 +25,7 @@ function NavbarCustom() {
       {/* Top */}
       <div className="flex justify-between items-center px-32">
         <div className="flex items-center pr-2 gap-4">
-          <img
-            src="https://github.com/shadcn.png"
-            alt=""
-            className="w-[32px]"
-          />
+          <Logo />
           <h1 className="logo">CaterLink</h1>
         </div>
 
