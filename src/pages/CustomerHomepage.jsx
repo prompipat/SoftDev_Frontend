@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import NavbarCustom from "../components/ui/Navbar-custom";
 import CarouselCustom from "../components/ui/Carousel-custom";
 import FilterCustom from "../components/ui/Filter-custom";
@@ -11,6 +13,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 function CustomerHomepage() {
+  const navigate = useNavigate();
+
+  const goToRestaurant = () => {
+    navigate("/customerrestaurant");
+  };
+
   return (
     <>
       <NavbarCustom />
@@ -26,31 +34,37 @@ function CustomerHomepage() {
               src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=184&h=140&fit=crop"
               alt="Thai Restaurant"
               className="rounded-md"
+              onClick={goToRestaurant}
             />
             <img
               src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=184&h=140&fit=crop"
               alt="Chinese Restaurant"
               className="rounded-md"
+              onClick={goToRestaurant}
             />
             <img
               src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=184&h=140&fit=crop"
               alt="Italian Restaurant"
               className="rounded-md"
+              onClick={goToRestaurant}
             />
             <img
               src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=184&h=140&fit=crop"
               alt="Seafood Restaurant"
               className="rounded-md"
+              onClick={goToRestaurant}
             />
             <img
               src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=184&h=140&fit=crop"
               alt="BBQ Restaurant"
               className="rounded-md"
+              onClick={goToRestaurant}
             />
             <img
               src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=184&h=140&fit=crop"
               alt="Italian Restaurant"
               className="rounded-md"
+              onClick={goToRestaurant}
             />
           </div>
         </div>

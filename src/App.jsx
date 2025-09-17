@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ui/scrolltotop";
 import CustomerHomepage from "./pages/CustomerHomepage";
 import CustomerRestaurant from "./pages/CustomerRestaurant";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<CustomerHomepage />} />
         <Route path="/customerrestaurant" element={<CustomerRestaurant />} />
