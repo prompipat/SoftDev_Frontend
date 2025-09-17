@@ -3,11 +3,11 @@ import { ChevronDown } from "lucide-react";
 
 function NavbarRestCustom(){
     return (
-        <div className="relative w-[240px] h-auto bg-[#F9FAFB] shadow-[inset_-16px_0_14px_rgba(0,0,0,0.03)]">
+        <div className="w-[240px] h-auto bg-[#F9FAFB] shadow-[inset_-24px_0_60px_rgba(0,0,0,0.03)]">
             {/* Logo wrap */}
-            <div className="flex items-center pt-[19px] pl-[28px] pb-[33px] gap-[16px]">
+            <div className="flex justify-center items-center pt-[19px] pb-[19px]">
                 <Logo className="w-[32px] h-[32px]"/>
-                <h1 className="logo font-[700]">CaterLink</h1>
+                <h1 className="logo font-[700] pl-[16px] tracking-tight">CaterLink</h1>
             </div>
 
             {/* Content */}
@@ -15,7 +15,7 @@ function NavbarRestCustom(){
                 <a href="#"><p className="pt-[13.5px] pb-[13.5px]">คำสั่งซื้อ</p></a>
                 <a href="#"><p className="pt-[13.5px] pb-[13.5px]">จัดการแพคเกจ</p></a>
                 <a href="#"><p className="pt-[13.5px] pb-[13.5px]">จัดการโปรโมชัน</p></a>
-                <a href="./writeblog"><p className="pt-[13.5px] pb-[13.5px]">บทความ</p></a>
+                <a href="#"><p className="pt-[13.5px] pb-[13.5px]">บทความ</p></a>
                 <a href="#"><p className="pt-[13.5px] pb-[13.5px]">จัดการร้านค้า</p></a>
             </div>
 
