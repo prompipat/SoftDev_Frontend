@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ui/scrolltotop";
 import CustomerHomepage from "./pages/CustomerHomepage";
 import CustomerRestaurant from "./pages/CustomerRestaurant";
+import CustomerReservation from "./pages/CustomerReservation";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<CustomerHomepage />} />
         <Route path="/customerrestaurant" element={<CustomerRestaurant />} />
+        <Route path="/customerreservation" element={<CustomerReservation />} />
         <Route
           path="/welcome"
           element={
