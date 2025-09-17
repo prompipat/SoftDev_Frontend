@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import { Upload } from 'lucide-react';
 
 import NavbarRestCustom from "../components/ui/Navbar-rest-custom";
 
@@ -22,96 +24,148 @@ function WriteBlog() {
       <div className="flex flex-row">
           <NavbarRestCustom />
           {/* Container */}
-          <div className="w-[1200px] h-[100vh] bg-[#F9FAFB]">
+          <div className="w-[1200px] h-auto bg-[#F9FAFB]">
             {/* Header Navigation */}
-            <div className="flex flex-col w-auto h-[63px] pl-[calc(50%-552px)] justify-center bg-green-200 mb-[32px]">
-                <p className="font-[24px] font-semibold">สร้างบทความทั่วไป</p>{/*semibold=600*/}
+            <div className="flex flex-col w-auto h-[63px] pl-[calc(50%-552px)] justify-center mb-[32px]">
+                <p className="text-[24px] font-[600]">สร้างบทความทั่วไป</p>
             </div>
 
             {/* Content */}
-            <div className="flex flex-col w-auto h-[1006px] items-center bg-green-200 mb-[32px]">
+            <div className="flex flex-col gap-[24px] w-auto h-[1006px] items-center mb-[32px]">
                 {/* Table */}
                 <div className="grid justify-center items-center border-[1px] border-[#F2F4F7] rounded-[24px] w-[1104px] h-[934px] bg-white">
                     {/* Content (Blog Infomation) */}
-                    <div className="flex w-[1056px] h-[404px] bg-green-200">
-                        <p className="font-[14px] w-[312px]">ข้อมูลบทความ</p>
+                    <div className="flex w-[1056px] h-[404px]">
+                        <p className="text-[14px] font-[600] w-[312px]">ข้อมูลบทความ</p>
                         {/* Input Field */}
-                        <form className="grid w-[356px] gap-[6px] mb-[24px]">
-                            <label><p className="flex">ร้านค้า<p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                            <select id="restaurants" className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="fiat">Fiat</option>
-                                <option value="audi">Audi</option>
-                            </select>
+                        <form className="grid w-[512px] gap-[16px]">
+                            <div className="grid h-fit gap-[6px]">
+                                <label><p className="flex h-[21px] text-[14px]">ร้านค้า<p className="text-[#F78E1E] pl-[3px]">*</p></p></label>
+                                <div className="relative">
+                                    <select id="restaurants" className="appearance-none w-[512px] h-[48px] pl-[14px] pr-[42px] pt-[12px] pb-[12px] border-[1px] border-[#D0D5DD] rounded-md">
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="fiat">Fiat</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                    <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                                        <ChevronDown className="w-[20px] h-[20px] text-[#86878A]" />
+                                    </div>
+                                </div>
+                            </div>
 
-                            <label><p className="flex">วันที่เผยแพร่ <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                            <input 
-                            type="date"
-                            id="timestamp"
-                            value={Payload.timestamp}
-                            placeholder="เลือกข้อมูล"
-                            className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                            />
-                            <label><p className="flex">หัวข้อบทความ <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                            <input 
-                            type="text"
-                            id="title"
-                            value={Payload.title}
-                            placeholder="กรุณาระบุ"
-                            className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                            />
-                            <label><p className="flex">รูปปกบทความ <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                            <input 
-                            type="file"
-                            id="img"
-                            value={Payload.imgurl}
-                            className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                            />
+                            <div className="grid h-fit gap-[6px]">
+                                <label><p className="flex h-[21px] text-[14px]">วันที่เผยแพร่ <p className="text-[#F78E1E] pl-[3px]">*</p></p></label>
+                                <input 
+                                type="date"
+                                id="timestamp"
+                                value={Payload.timestamp}
+                                placeholder="เลือกข้อมูล"
+                                className="h-[48px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                                />
+                            </div>
+
+
+                            <div className="grid h-fit gap-[6px]">
+                                <label><p className="flex h-[21px] text-[14px]">หัวข้อบทความ <p className="text-[#F78E1E] pl-[3px]">*</p></p></label>
+                                <input 
+                                type="text"
+                                id="title"
+                                value={Payload.title}
+                                placeholder="กรุณาระบุ"
+                                className="h-[48px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                                />
+                            </div>
+
+                            <div className="grid h-fit gap-[6px]">
+                                <label><p className="flex h-[21px] text-[14px]">รูปปกบทความ <p className="text-[#F78E1E] pl-[3px]">*</p></p></label>
+                                <div className="relative">
+                                     <input 
+                                        type="file"
+                                        accept=".jpg,.jpeg,.png"
+                                        id="img"
+                                        value={Payload.imgurl}
+                                        className="w-[512px] h-[104px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                                    />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    {/* Divider */}
+                    <div className="w-[1056px] h-[1px] bg-[#EAECF0]"></div>
+
+                    {/* Content (Blog Category) */}
+                    <div className="flex w-[1056px] h-[166px]">
+                        <div className="grid text-[14px] w-[312px] h-fit">
+                            <p className="font-[600]">หมวดหมู่</p>
+                            <p>เลือกได้มากกว่า 1 ข้อ</p>
+                        </div>
+                        {/* Input Field */}
+                        <form className="grid w-[512px] gap-[6px]">
+                            <label><p className="flex h-[21px] text-[14px]">หมวดหมู่หลัก<p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
+                            <div className="relative">
+                                <select id="category" className="appearance-none w-[512px] h-[48px] pl-[14px] pr-[42px] pt-[12px] pb-[12px] border-[1px] border-[#D0D5DD] rounded-md">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                                    <ChevronDown className="w-[20px] h-[20px] text-[#86878A]" />
+                                </div>
+                            </div>
+
+                            <label><p className="flex h-[21px] text-[14px]">ประเภทงานอีเวนต์ <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
+                            <div className="relative">
+                                <select id="type" className="appearance-none w-[512px] h-[48px] pl-[14px] pr-[42px] pt-[12px] pb-[12px] border-[1px] border-[#D0D5DD] rounded-md">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                                    <ChevronDown className="w-[20px] h-[20px] text-[#86878A]" />
+                                </div>
+                            </div>
+
                         </form>
                     </div>
 
-                    {/* Content (Blog Category) */}
-                    <div className="flex w-[1056px] h-[166px] bg-green-200">
-                        <p className="font-[14px] w-[312px]">
-                            หมวดหมู่ <br/>
-                            เลือกได้มากกว่า 1 ข้อ
-                        </p>
+                    {/* Divider */}
+                    <div className="w-[1056px] h-[1px] bg-[#EAECF0]"></div>
+
+                    {/* Content (Blog Detail) */}
+                    <div className="flex w-[1056px] h-[153px]">
+                        <p className="text-[14px] w-[312px] font-[600]">เนื้อหาบทความ</p>
                         {/* Input Field */}
-                        <form className="grid w-[356px] gap-[6px] mb-[24px]">
-                            <label><p className="flex">หมวดหมู่หลัก<p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                            <select id="category" className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="fiat">Fiat</option>
-                                <option value="audi">Audi</option>
-                            </select>
-
-                            <label><p className="flex">ประเภทงานอีเวนต์ <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                            <select id="type" className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="fiat">Fiat</option>
-                                <option value="audi">Audi</option>
-                            </select>
-
+                        <form className="grid w-[512px]">
+                            <div className="grid h-fit gap-[6px]">
+                                <label><p className="flex h-[21px] text-[14px]">เนื้อหา <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
+                                <input 
+                                type="textarea"
+                                id="detail"
+                                value={Payload.detail}
+                                placeholder="กรุณากรอกข้อมูล"
+                                className="h-[126px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                                />
+                            </div>
                         </form>
                     </div>
 
-                    {/* Content (Blog Category) */}
-                    <div className="flex w-[1056px] h-[153px] bg-green-200">
-                        <p className="font-[14px] w-[312px]">เนื้อหาบทความ</p>
-                        {/* Input Field */}
-                        <form className="grid w-[356px]">
-                            <label className="h-fit"><p className="flex">เนื้อหา <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                            <input 
-                            type="textarea"
-                            id="detail"
-                            value={Payload.detail}
-                            placeholder="กรุณากรอกข้อมูล"
-                            className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                            />
-                        </form>
+                    {/* Divider */}
+                    <div className="w-[1056px] h-[1px] bg-[#EAECF0]"></div>
+                </div>
+
+                {/* Action */}
+                <div className="flex items-center gap-[642px] w-[1104px] h-[48px]">
+                    {/* Left */}
+                    <Button className="w-[150px] h-[48px] bg-transparent text-[#F78E1E] text-[16px] shadow-none hover:bg-transparent"><span className="hover:bg-transparent cursor-pointer transition">ยกเลิก</span></Button>
+
+                    {/* Right */}
+                    <div className="flex gap-[12px]">
+                        <Button className="w-[150px] h-[48px] rounded-[10000px] text-[#F78E1E] text-[16px] bg-transparent border-[1px] border-[#F78E1E] hover:bg-transparent cursor-pointer transition">บันทึกร่าง</Button>
+                        <Button className="w-[150px] h-[48px] rounded-[10000px] text-[16px] bg-[#F78E1E] hover:cursor-pointer transition">บันทึก</Button>
                     </div>
                 </div>
             </div>
@@ -121,4 +175,4 @@ function WriteBlog() {
   );
 }
 
-export default WriteBlog;
+export default WriteBlog
