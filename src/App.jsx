@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ui/scrolltotop";
 import CustomerHomepage from "./pages/CustomerHomepage";
-import Register from "./pages/Register";
+import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import CustomerRestaurant from "./pages/CustomerRestaurant";
 
@@ -11,7 +11,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<CustomerHomepage />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/customerrestaurant" element={<CustomerRestaurant />} />
         <Route

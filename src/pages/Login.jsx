@@ -30,23 +30,28 @@ function Login() {
               </div>
 
               {/* form */}
-              <form className="grid gap-[6px] mt-[32px] mb-[24px]">
-                <label><p>Email*</p></label>
-                <input 
-                  type="email"
-                  id="email"
-                  value={loginData.email}
-                  placeholder="เพิ่ม Email"
-                  className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                />
-                <label><p>Password*</p></label>
-                <input 
-                  type="password"
-                  id="passwd"
-                  value={loginData.passwd}
-                  placeholder="Input password"
-                  className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                />
+              <form className="grid gap-[20px] mt-[32px] mb-[24px]">
+                <div className="grid h-fit gap-[6px]">
+                  <label><p>Email</p></label>
+                  <input 
+                    type="email"
+                    id="email"
+                    value={loginData.email}
+                    placeholder="เพิ่ม Email"
+                    className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                  />
+                </div>
+
+                <div className="grid h-fit gap-[6px]">
+                  <label><p>Password</p></label>
+                  <input 
+                    type="password"
+                    id="passwd"
+                    value={loginData.passwd}
+                    placeholder="Input password"
+                    className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                  />
+                </div>
               </form>
 
               {/* action */}
@@ -55,7 +60,7 @@ function Login() {
               {/* row */}
               <div className="flex justify-center gap-[5px] mt-[32px]">
                 <p>ยังไม่มีบัญชี ?</p>
-                <a href="./register"><p className="font-bold text-[#FF8A00]">สร้างบัญชีใหม่</p></a>
+                <a href="./signup"><p className="font-bold text-[#FF8A00]">สร้างบัญชีใหม่</p></a>
               </div>
             </div>
           </div>
