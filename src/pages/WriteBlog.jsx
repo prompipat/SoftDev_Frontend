@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
-import { Upload } from 'lucide-react';
+import { ChevronDown,CloudUpload } from "lucide-react";
 
 import NavbarRestCustom from "../components/ui/Navbar-rest-custom";
 
@@ -61,7 +60,7 @@ function WriteBlog() {
                                 id="timestamp"
                                 value={Payload.timestamp}
                                 placeholder="เลือกข้อมูล"
-                                className="h-[48px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                                className="appearance-none h-[48px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
                                 />
                             </div>
 
@@ -85,15 +84,27 @@ function WriteBlog() {
                                         accept=".jpg,.jpeg,.png"
                                         id="img"
                                         value={Payload.imgurl}
-                                        className="w-[512px] h-[104px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                                        className="hidden w-[512px] h-[104px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
                                     />
+                                    <label
+                                    htmlFor="img"
+                                    class="flex flex-col items-center gap-[12px] w-[512px] h-[104px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                                    >
+                                    <div className="flex w-[40px] h-[40px] justify-center items-center shadow-sm border-[1px] border-[#EAECF0] rounded-[8px]">
+                                        <CloudUpload className="h-fit w-[20px] h-[20px]"/>
+                                    </div>
+                                    <div className="flex gap-[4px] text-[14px]">
+                                        <p className="cursor-pointer text-[#F78E1E] font-[600]">คลิกเพื่ออัพโหลด</p>
+                                        <p>หรือลากและวางไฟล์</p>
+                                    </div>
+                                </label>
                                 </div>
                             </div>
                         </form>
                     </div>
                     
                     {/* Divider */}
-                    <div className="w-[1056px] h-[1px] bg-[#EAECF0]"></div>
+                    <div className="w-[1056px] h-[0.5px] bg-[#EAECF0]"></div>
 
                     {/* Content (Blog Category) */}
                     <div className="flex w-[1056px] h-[166px]">
@@ -142,12 +153,10 @@ function WriteBlog() {
                         <form className="grid w-[512px]">
                             <div className="grid h-fit gap-[6px]">
                                 <label><p className="flex h-[21px] text-[14px]">เนื้อหา <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                                <input 
-                                type="textarea"
+                                <textarea
                                 id="detail"
-                                value={Payload.detail}
                                 placeholder="กรุณากรอกข้อมูล"
-                                className="h-[126px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                                className="resize-none h-[126px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
                                 />
                             </div>
                         </form>
