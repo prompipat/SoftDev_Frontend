@@ -1,8 +1,12 @@
+import { useState } from "react";
 import NavbarCustom from "../components/ui/Navbar-custom";
 import PackageCard from "../components/ui/PackageCard";
 import PackageCard2 from "../components/ui/PackageCard2";
 import MiniFooter from "../components/ui/miniFooter";
 import PackageCardPromotion from "../components/ui/PackageCardPromotion";
+import Modal from "../components/ui/Modal";
+import PackageDetails from "../components/ui/PackageDetails";
+import ReservationDetails from "../components/ui/ReservationDetails";
 import { Star, BadgeCheck, HandPlatter, Heart } from "lucide-react";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
@@ -17,6 +21,29 @@ import {
 } from "@/components/ui/breadcrumb";
 
 function CustomerReservation() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalStep, setModalStep] = useState("package"); // 'package' or 'reservation'
+  const [selectedPackageData, setSelectedPackageData] = useState(null);
+
+  const openModal = () => {
+    setModalStep("package");
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalStep("package");
+    setSelectedPackageData(null);
+  };
+
+  const showReservationDetails = (packageData) => {
+    setSelectedPackageData(packageData);
+    setModalStep("reservation");
+  };
+
+  const backToPackageSelection = () => {
+    setModalStep("package");
+  };
   return (
     <>
       <NavbarCustom />
@@ -220,11 +247,11 @@ function CustomerReservation() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
           </div>
         </div>
 
@@ -234,11 +261,11 @@ function CustomerReservation() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
           </div>
         </div>
 
@@ -248,11 +275,11 @@ function CustomerReservation() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
           </div>
         </div>
 
@@ -262,16 +289,32 @@ function CustomerReservation() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
-            <PackageCard2 />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
+            <PackageCard2 onClick={openModal} />
           </div>
         </div>
       </div>
 
       <MiniFooter />
+
+      {/* Package Details Modal */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {modalStep === "package" ? (
+          <PackageDetails
+            onClose={closeModal}
+            onShowReservation={showReservationDetails}
+          />
+        ) : (
+          <ReservationDetails
+            onClose={closeModal}
+            onBack={backToPackageSelection}
+            selectedPackage={selectedPackageData}
+          />
+        )}
+      </Modal>
     </>
   );
 }

@@ -3,6 +3,7 @@ import ScrollToTop from "./components/ui/scrolltotop";
 import CustomerHomepage from "./pages/CustomerHomepage";
 import CustomerRestaurant from "./pages/CustomerRestaurant";
 import CustomerReservation from "./pages/CustomerReservation";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           }
         />
       </Routes>
+
+      {/* Global Toaster for notifications */}
+      <Toaster position="top-right" richColors closeButton duration={4000} />
     </Router>
   );
 }

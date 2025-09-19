@@ -1,6 +1,9 @@
-function PackageCard2() {
+function PackageCard2({ onClick }) {
   return (
-    <div className="flex flex-col gap-2 max-w-[284px] relative">
+    <div
+      className="flex flex-col gap-2 max-w-[284px] relative cursor-pointer hover:opacity-75 transition-opacity"
+      onClick={onClick}
+    >
       <div className="flex gap-2 max-w-[284px]">
         <img
           src="https://github.com/shadcn.png"
