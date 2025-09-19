@@ -1,5 +1,8 @@
 import NavbarCustom from "../components/ui/Navbar-custom";
 import PackageCard from "../components/ui/PackageCard";
+import PackageCard2 from "../components/ui/PackageCard2";
+import MiniFooter from "../components/ui/miniFooter";
+import PackageCardPromotion from "../components/ui/PackageCardPromotion";
 import { Star, BadgeCheck, HandPlatter, Heart } from "lucide-react";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
@@ -166,10 +169,10 @@ function CustomerReservation() {
           </div>
 
           <div className="flex gap-4">
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
+            <PackageCardPromotion />
+            <PackageCardPromotion />
+            <PackageCardPromotion />
+            <PackageCardPromotion />
           </div>
         </div>
       </div>
@@ -217,11 +220,11 @@ function CustomerReservation() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
           </div>
         </div>
 
@@ -231,11 +234,11 @@ function CustomerReservation() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
           </div>
         </div>
 
@@ -245,11 +248,11 @@ function CustomerReservation() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
           </div>
         </div>
 
@@ -259,14 +262,16 @@ function CustomerReservation() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
+            <PackageCard2 />
           </div>
         </div>
       </div>
+
+      <MiniFooter />
     </>
   );
 }

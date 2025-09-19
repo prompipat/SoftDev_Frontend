@@ -2,15 +2,19 @@ import { useState } from "react";
 import { Star, BadgeCheck, HandPlatter, Heart } from "lucide-react";
 import { Badge } from "./badge";
 
-function RestaurantCard() {
+function RestaurantCard({ onClick }) {
   const [isLiked, setIsLiked] = useState(false);
 
-  const toggleHeart = () => {
+  const toggleHeart = (e) => {
+    e.stopPropagation(); // Prevent card click when heart is clicked
     setIsLiked(!isLiked);
   };
 
   return (
-    <div className="flex flex-col gap-3 relative">
+    <div
+      className="flex flex-col gap-3 relative cursor-pointer hover:opacity-75 transition-opacity"
+      onClick={onClick}
+    >
       <div className="relative">
         <img
           src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=224&h=220&fit=crop"

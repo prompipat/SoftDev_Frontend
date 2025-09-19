@@ -3,22 +3,14 @@ import { Search } from "lucide-react";
 import { ShoppingCart } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 import Logo from "./Logo";
-// import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NavbarCustom() {
-  //   const navigate = useNavigate();
-  //   const location = useLocation();
+  const navigate = useNavigate();
 
-  //   const navItems = [
-  //     { path: "/", label: "หน้าแรก", name: "home" },
-  //     { path: "/customerhomepage", label: "หน้าลูกค้า", name: "customer" },
-  //     { path: "/about", label: "เกี่ยวกับเรา", name: "about" },
-  //     { path: "/contact", label: "ติดต่อเรา", name: "contact" },
-  //   ];
-
-  //   const handleNavigation = (path) => {
-  //     navigate(path);
-  //   };
+  const goToHome = () => {
+    navigate("/");
+  };
 
   return (
     <nav className="w-full h-fit flex flex-col py-5 gap-4 bg-white shadow-[0_2px_8px_0px_#0000001A]">
@@ -26,7 +18,9 @@ function NavbarCustom() {
       <div className="flex justify-between items-center px-32">
         <div className="flex items-center pr-2 gap-4">
           <Logo />
-          <h1 className="logo">CaterLink</h1>
+          <h1 className="logo cursor-pointer" onClick={goToHome}>
+            CaterLink
+          </h1>
         </div>
 
         <div className="flex gap-6">
