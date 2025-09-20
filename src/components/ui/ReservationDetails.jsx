@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin } from "lucide-react";
+import { Calendar, Clock, MapPin, CheckCircle, X } from "lucide-react";
 import { Button } from "./button";
 import { useState, useEffect, useRef } from "react";
 import { Calendar as CalendarComponent } from "./calendar";
@@ -74,11 +74,58 @@ function ReservationDetails({ onClose, onBack }) {
 
     console.log("Showing toast..."); // Debug log
 
-    // Show success toast
-    toast.success("จองสำเร็จ! 🎉", {
-      description: `วันที่: ${reservationData.date} | เวลา: ${reservationData.startTime} - ${reservationData.endTime}`,
-      duration: 4000,
-    });
+    // Show success toast with custom JSX content
+    const toastId = toast(
+      <div className="relative max-w-[480px]">
+        {/* Close button in top right */}
+        <button
+          onClick={() => toast.dismiss(toastId)}
+          className="absolute -top-2 -right-2 p-1 rounded-full hover:bg-gray-100 transition-colors"
+        >
+          <X className="h-4 w-4 text-[#667085] hover:text-[#344054]" />
+        </button>
+
+        {/* Main content */}
+        <div className="flex items-start gap-3 pr-6">
+          {/* Green checkmark icon */}
+          <div className="flex-shrink-0 mt-0.5">
+            <CheckCircle className="h-5 w-5 text-[#10B981]" />
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col gap-3 flex-1 w-full">
+            <div className="text-[#101828] font-medium text-sm">
+              ส่งการจองให้ร้านค้าแล้ว
+            </div>
+            <div className="text-[#667085] text-sm">
+              โปรดรอร้านค้าตอบกลับภายในระยะเวลา 1-2 วัน
+            </div>
+            <button
+              className="text-[#FF8A00] text-sm font-semibold text-left hover:text-[#E6720A] transition-colors"
+              onClick={() => {
+                console.log("View booking status clicked");
+                // Add navigation logic here if needed
+              }}
+            >
+              ดูสถานะการจอง
+            </button>
+          </div>
+        </div>
+      </div>,
+      {
+        duration: 6000,
+        style: {
+          background: "white",
+          border: "1px solid #E4E7EC",
+          boxShadow:
+            "0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08)",
+          borderRadius: "12px",
+          padding: "16px",
+          minWidth: "400px",
+        },
+        unstyled: true, // Completely remove all default Sonner styling
+      }
+    );
 
     console.log("Toast should be visible now"); // Debug log
 
