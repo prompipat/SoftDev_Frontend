@@ -42,7 +42,7 @@ return (
             </div>
 
             {/* Content */}
-            <div className="flex flex-col gap-[24px] w-auto h-[1207px] items-center mb-[32px]">
+            <div className="flex flex-col gap-[24px] w-auto h-[1145px] items-center mb-[32px]">
                 {subpages[Tabindex].Content}
             </div>
           </div>

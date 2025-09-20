@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown,HandPlatter,Inbox,UtensilsCrossed } from "lucide-react";
+import { Eye,EyeOff,HandPlatter,Inbox,UtensilsCrossed } from "lucide-react";
 
 const mainctgs = [
     {label: 'จัดเลี้ยง',icon:<HandPlatter className="w-[12px] h-[12px] text-[#F78E1E]"/>,value: "TEST1",detail:"Buffet, ซุ้มอาหาร, Cocktail, Coffee Break"},
@@ -29,14 +29,18 @@ function UserAccount() {
     const [Eventindex,setEventindex] = useState(null)
     const [Foodindex,setFoodindex] = useState(null)
 
+    const [Visible,setVisible] = useState(0)
+
     const [Payload,setPayload] = useState({
         restaurant:"อร่อยดีมีชัย",
         vatid:"1000010000100010",
         address:"ซอย วิภาวดีรังสิต 3 แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร 10900",
         zone:"กรุงเทพ",
-        category:"",
-        type:"",
-        detail:""
+        mainctg:"",
+        eventtype:"",
+        foodtype:"",
+        email:"Nongnuy@ahhroi.com",
+        passwd:"dffdfdfdfdf"
     })
 
     return (
@@ -118,7 +122,7 @@ function UserAccount() {
                                         Mainindex === index
                                             ? 'border-black border-[2px]'
                                             : 'text-black'
-                                        } hover:border-black cursor-pointer `}
+                                        } hover:cursor-pointer `}
                                         >
                                             {content.icon}<p className="text-[12px] font-[500]">{content.label}</p>
                                         </div>
@@ -139,7 +143,7 @@ function UserAccount() {
                                         Eventindex === index
                                             ? 'border-black border-[2px]'
                                             : 'text-black'
-                                        } hover:border-black cursor-pointer `}
+                                        } hover:cursor-pointer `}
                                     >
                                         {content.label}
                                     </div>
@@ -158,7 +162,7 @@ function UserAccount() {
                                         Foodindex === index
                                             ? 'border-black border-[2px]'
                                             : 'text-black'
-                                        } hover:border-black cursor-pointer `}
+                                        } hover:cursor-pointer `}
                                     >
                                         {content.label}
                                     </div>
@@ -176,31 +180,41 @@ function UserAccount() {
                     <div className="flex w-[1056px] h-[166px]">
                         <p className="text-[14px] w-[312px] font-[600]">ข้อมูลผู้ใช้งาน</p>
                         {/* Input Field */}
-                        <form className="grid w-[512px]">
+                        <form className="grid gap-[20px] w-[512px]">
                             <div className="grid h-fit gap-[6px]">
-                                <label><p className="flex h-[21px] text-[14px]">เนื้อหา <p className="text-[#F78E1E] pl-[4px]">*</p></p></label>
-                                <textarea
-                                id="detail"
-                                placeholder="กรุณากรอกข้อมูล"
-                                className="resize-none h-[126px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
-                                />
+                            <label><p className="text-[14px] text-[Colors/Tertiary/500] font-[500]">Username / Email</p></label>
+                            <input 
+                                type="email"
+                                id="email"
+                                value={Payload.email}
+                                placeholder="เพิ่ม Email"
+                                className="pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md"
+                            />
+                            </div>
+
+                            <div className="grid h-fit gap-[6px]">
+                                <label><p className="text-[14px] text-[Colors/Tertiary/500] font-[500]">Password</p></label>
+                                <div className="relative">
+                                    <input 
+                                        type={Visible ? "text" : "password"}
+                                        id="passwd"
+                                        value={Payload.passwd}
+                                        placeholder="Input password"
+                                        className="w-[512px] pl-[14px] pr-[14px] pt-[10px] pb-[10px] border-[1px] border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                    {Visible ? <Eye className="absolute text-[#F78E1E] w-[16px] h-[16px] right-[14px] top-1/2 -translate-y-1/2 hover:cursor-pointer" onClick={() => setVisible(!Visible)}/> : <EyeOff className="absolute text-[#F78E1E] w-[16px] h-[16px] right-[14px] top-1/2 -translate-y-1/2 hover:cursor-pointer" onClick={() => setVisible(!Visible)}/>}
+                                </div>
                             </div>
                         </form>
                     </div>
-
-                    {/* Divider */}
-                    <div className="w-[1056px] h-[1px] bg-[#EAECF0]"></div>
                 </div>
 
                 {/* Action */}
                 <div className="flex items-center gap-[642px] w-[1104px] h-[48px]">
-                    {/* Left */}
-                    <Button className="w-[150px] h-[48px] bg-transparent text-[#F78E1E] text-[16px] shadow-none hover:bg-transparent"><span className="hover:bg-transparent cursor-pointer transition">ยกเลิก</span></Button>
-
                     {/* Right */}
-                    <div className="flex gap-[12px]">
-                        <Button className="w-[150px] h-[48px] rounded-[10000px] text-[#F78E1E] text-[16px] bg-transparent border-[1px] border-[#F78E1E] hover:bg-transparent cursor-pointer transition">บันทึกร่าง</Button>
-                        <Button className="w-[150px] h-[48px] rounded-[10000px] text-[16px] bg-[#F78E1E] hover:cursor-pointer transition">บันทึก</Button>
+                    <div className="flex gap-[12px] ml-[792px]">
+                        <Button className="w-[150px] h-[48px] rounded-[10000px] text-[#F78E1E] text-[16px] bg-transparent border-[1px] border-[#F78E1E] hover:bg-transparent cursor-pointer transition">ยกเลิก</Button>
+                        <Button className="w-[150px] h-[48px] rounded-[10000px] text-[16px] bg-[#F78E1E] hover:cursor-pointer transition">สร้างร้านค้า</Button>
                     </div>
                 </div>
         </>
