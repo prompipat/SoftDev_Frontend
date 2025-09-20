@@ -14,7 +14,7 @@ function Setting() {
 
 return (
     <>
-      {/*หน้าเขียน Blog*/}
+      {/*หน้าการตั้งค่า*/}
       <div className="flex flex-row">
           <NavbarRestCustom />
           {/* Container */}
