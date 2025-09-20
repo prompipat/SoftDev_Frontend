@@ -10,7 +10,7 @@ import { ChevronDown } from "lucide-react";
 
 function Cartbar() {
   return (
-    <div className="flex max-w-[1184px] rounded-lg border border-[#D0D5DD] justify-between py-3 px-4 bg-[#F9FAFB] mt-8 mb-3">
+    <div className="flex max-w-[1184px] w-full rounded-lg border border-[#D0D5DD] justify-between py-3 px-4 bg-[#F9FAFB] mt-8 mb-3">
       <div className="flex gap-20 max-w-[516px] w-full">
         <DropdownMenu className="max-w-[170px] w-full rounded-md border border-[#EAECF0]">
           <DropdownMenuTrigger className="flex items-center justify-between gap-2 px-3 text-sm font-semibold text-[#475467] bg-white hover:bg-gray-50 transition-colors min-w-[170px]">
